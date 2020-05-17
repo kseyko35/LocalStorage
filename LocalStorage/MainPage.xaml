@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="LocalStorage.MainPage">
+    <StackLayout Margin="50,0,50,0" HorizontalOptions="Center" VerticalOptions="Center">
+      
+        <Entry Placeholder="Write something! " x:Name="mEntry"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        <Button TextColor="Black" Grid.Column="0" Text="Save"   Clicked="onSave" FontAttributes="Bold" BackgroundColor="Green" CornerRadius="15"/>
+        <Button TextColor="Black" Grid.Column="1" Text="Delete" Clicked="onDelete" CornerRadius="15" BackgroundColor="Red"></Button>
+        </Grid>
+        <Label x:Name="mLabel" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center" />
+         <Entry Placeholder="Write something! " x:Name="mEntry1"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        <Button TextColor="Black" Grid.Column="0" Text="Save"   Clicked="onSave1" FontAttributes="Bold" BackgroundColor="Green" CornerRadius="15"/>
+        <Button TextColor="Black" Grid.Column="1" Text="Delete" Clicked="onDelete1" CornerRadius="15" BackgroundColor="Red"></Button>
+        </Grid>
+        <Label x:Name="mLabel1" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center" />
+        <ListView HeightRequest="200" x:Name="lstview" HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="Center" Orientation="Horizontal" HorizontalOptions="Center">
+                            <Image Source="{Binding ImgUrl}"/>
+                            <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Name}" d:BackgroundColor="Red" TextColor="DarkOrange"/>
+                            <Label Text="{Binding Money}" TextColor="Black"/>
+                                </StackLayout>
+                        </StackLayout>
+                    </ViewCell> 
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView> 
+    </StackLayout>
+</ContentPage>
